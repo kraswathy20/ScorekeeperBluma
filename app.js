@@ -49,14 +49,12 @@ reset.addEventListener('click', resetter)
 
 function resetter(){
     isGameOver= false
-    player1.score = 0
-    player2.score = 0
-    player1.display.textContent = 0
-    player2.display.textContent = 0
-    player2.display.classList.remove('has-text-success','has-text-danger')
-    player1.display.classList.remove('has-text-success','has-text-danger')
-    player1.button.disabled = false;
-    player2.button.disabled = false;
+    for(let p of [player1,player2]){
+        p.score = 0,
+        p.display.textContent = 0,
+        p.display.classList.remove('has-text-success','has-text-danger'),
+        p.button.disabled = false;
+    }
 }
 
 
